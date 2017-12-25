@@ -105,28 +105,11 @@ namespace ProductionCell
                 return;
             }
 
-            bool flag = false;
-
-            // if after take element, still arrived
             elementStack.RemoveAt(0);
-            for(int i=0; i<elementStack.Count; i++)
-            {
-                if(elementStack[i] >= length)
-                {
-                    flag = true;
-                    break;
-                }
-            }
-
-            if(!flag)
-            {
-                elementArriveSensor = false;
-                enable = true;
-            }
-            else
-            {
-                Console.WriteLine("belt : sensor in yet. belt still disable.");
-            }
+           
+            elementArriveSensor = false;
+            enable = true;
+           
         }
 
         public void Monitor()
